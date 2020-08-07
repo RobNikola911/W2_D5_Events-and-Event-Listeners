@@ -1,3 +1,5 @@
+let wasClicked = false;
+
 $( "#first" ).on('click', (function() {
     console.log( 'Yeah, you clicked me' );
   }));
@@ -8,5 +10,8 @@ $( "#second" ).on('click', (function() {
 
 
 $( "#third" ).on('click', (function() {
-    let backgroundColor = $('button').css('background-color', 'white');
+    if (!wasClicked) {
+        let backgroundColor = $('button').css('background-color', document.getElementById("color").value);
+        wasClicked = true;
+    } 
 }));
